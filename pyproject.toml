@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sheetbrain"
+version = "0.1.0"
+description = "AI-powered Excel analysis toolkit with three-stage architecture (Understand-Execute-Validate)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "Microsoft Corporation"}
+]
+keywords = ["excel", "ai", "llm", "data-analysis", "openai", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "openai>=1.0.0",
+    "openpyxl>=3.1.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "tiktoken>=0.5.0",
+    "matplotlib>=3.7.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+sheetbrain = "main:main"
+
+[project.urls]
+Homepage = "https://github.com/microsoft/SheetBrain"
+Repository = "https://github.com/microsoft/SheetBrain"
+
+[tool.setuptools.packages.find]
+include = ["core*", "modules*", "utils*", "config*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.xlsx"]
+
